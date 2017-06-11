@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method="post", action="/admin/movie/new")
+                //-horizontal代表水平表单
+                input(type="hidden", name="movie[_id]", value=movie._id)
+                .form-group
+                    label.col-sm-2.control-label(for="inputTitle") 电影名字
+                    //- for规定 label 绑定到哪个表单元素。
+                    .col-sm-10
+                        //- 相比较jade，会去除#{}
+                        input#inputTitle.form-control(type="text", name="movie[title]", value=movie.title, placeholder="请输入电影名称···")
+                        //- 所有设置了 .form-control 类的 <input>、<textarea> 和 <select> 元素都将被默认设置宽度属性为 width: 100%;
+                .form-group
+                    label.col-sm-2.control-label(for="inputDirecter") 导演
+                    .col-sm-10
+                        input#inputDirecter.form-control(type="text", name="movie[directer]", value=movie.directer, placeholder="请输入导演名字···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputCountry") 国家
+                    .col-sm-10
+                        input#inputCountry.form-control(type="text", name="movie[country]", value=movie.country, placeholder="请输入国家名称···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputLanguage") 语种
+                    .col-sm-10
+                        input#inputLanguage.form-control(type="text", name="movie[language]", value=movie.language, placeholder="请输入语种···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputYear") 上映年份
+                    .col-sm-10
+                        input#inputYear.form-control(type="text", name="movie[year]", value=movie.year, placeholder="请输入上映年份···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputPoster") 海报地址
+                    .col-sm-10
+                        input#inputPoster.form-control(type="text", name="movie[poster]", value=movie.poster, placeholder="请输入海报地址···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputFlash") 预告片地址
+                    .col-sm-10
+                        input#inputFlash.form-control(type="text", name="movie[flash]", value=movie.flash, placeholder="请输入预告片地址···")
+                .form-group
+                    label.col-sm-2.control-label(for="inputSummary") 简介
+                    .col-sm-10
+                        textarea#inputSummary.form-control(name="movie[summary]",rows=3,  placeholder="请输入简介···") #{movie.summary}
+                button.input.btn.btn-primary(type="submit") 录入
+

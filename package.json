@@ -1,0 +1,23 @@
+{
+  "name": "movie-app-re",
+  "version": "1.0.0",
+  "description": "This is an app can store the information about movie",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bower": "^1.8.0",
+    "express": "^4.15.3",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+    .container
+        .row
+            table.table.table-bordered.table-hover
+                thead#thead
+                    tr.movie-info-title
+                        th 名字
+                        th 创建时间
+                        th 更新时间
+                        th 查看详情
+                        th 修改内容
+                        th 删除
+                each item in users
+                    tbody#tbody
+                        tr(class="item-id-"+item._id)
+                            td #{item.name}
+                            td #{moment(item.meta.createAt).format('MM/DD/YYYY HH:MM:SS')}
+                            td #{moment(item.meta.updateAt).format('MM/DD/YYYY HH:MM:SS')}
+                            td:  a(target="_blank",href="../movie/"+item._id) 查看
+                            td:  a(target="_blank",href="./update/"+item._id) 修改
+                            td 
+                                button.btn.btn-danger.btn-sm.del(type="button", data-id=item._id) 删除
+    //- script(src="../../js/remove.js")

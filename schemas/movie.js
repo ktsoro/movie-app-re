@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+var mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
 let movieSchema= new mongoose.Schema({
     title:String,

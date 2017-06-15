@@ -10,6 +10,10 @@ let movieSchema= new mongoose.Schema({
     poster:String,
     flash:String,
     summary:String,
+    pv: {
+        type: Number,
+        default: 0
+    },
     meta: {
         createdAt: {
             type: Date,

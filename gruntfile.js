@@ -40,13 +40,23 @@ module.exports = function(grunt) {
             options: {
                 logConcurrentOutput: true
             }
+        },
+
+        mochaTest: {
+            options: {
+                reporter: 'spec'
+            },
+            src: ['test/**/*.js']
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-watch') // 监听文件改动，重新执行流程
     grunt.loadNpmTasks('grunt-nodemon')       // 监听入口文件改动，自动重启
     grunt.loadNpmTasks('grunt-concurrent')    // 慢任务开发的优化
+    grunt.loadNpmTasks('grunt-mocha-test')    // 单元测试部分
 
     grunt.option('force', true)               // 防止因为语法错误或者警告而使得编译中断
     grunt.registerTask('default', ['concurrent'])
+
+    grunt.registerTask('test', ['mochaTest'])
 }

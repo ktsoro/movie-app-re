@@ -15,7 +15,7 @@ exports.signup = function (req, res) {
                 user = new usermodel(_user)
                 user.save(function (err, user) {
                     if (err) { console.log(err)}
-                    
+
                     res.redirect('/admin/userlist')
                 })
             }
@@ -50,6 +50,12 @@ exports.signin = function (req, res) {
                 }
             })
         }
+    })
+}
+
+exports.showSignin = function (req, res) {
+    res.render('signin', {
+        title:'注册页面'
     })
 }
 

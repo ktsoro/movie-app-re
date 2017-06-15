@@ -7,6 +7,7 @@ var commentmodel = require('../models/comment')
 exports.detail =  function (req, res) {
     var id = req.params.id
     moviemodel.findById(id, function (err, movie) {
+        moviemodel.update({_id: id}, {$inc: {pv:1}}, function(err) {if(err) console.log(err)})
         commentmodel
             .find({movie: id}) // 找到评论数据
             .populate('from', 'name') // 根据obj数据from，查询name

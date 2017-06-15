@@ -16,7 +16,7 @@ var app = express()
 mongoose.connect(dbUrl)
 
 app.set('view engine', 'pug')
-app.set('views', './views/pages')
+app.set('views', './app/views/pages')
 
 app.use(express.static('./public'))
 app.use(cookieParser())
